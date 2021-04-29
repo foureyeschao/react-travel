@@ -11,25 +11,7 @@ function App() {
           React-Travel is initialized.
         </p>
       </header>
-=======
-      <Header />
-      <div className={styles['page-content']}>
-        <Row style={{ marginTop: 20 }}>
-          <Col span={6}><SideMenu /></Col>
-          <Col span={18}><Carousel /></Col>
-        </Row>
-        <ProductCollection
-          title={
-            <Typography.Title level={3} type="warning">
-              Best Deals
-            </Typography.Title>
-          }
-          sideImage={sideImage1}
-          products={productList1}
-        />
-      </div>
-      <Footer />
->>>>>>> Stashed changes
+      <header />
     </div >
   );
 }
