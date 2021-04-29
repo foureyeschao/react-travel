@@ -1,22 +1,10 @@
 import React from 'react';
-<<<<<<< Updated upstream
 import logo from './logo.svg';
-import styles from './App.module.css';
-=======
 import styles from './App.module.css'
-import { Header, Footer, SideMenu, Carousel } from './components'
-import { Row, Col, Typography } from 'antd'
-
-import { productList1, productList2, productList3 } from './mockups'
-import sideImage1 from './assets/images/sider_2019_12-09.png'
-import sideImage2 from './assets/images/sider_2019_02-04.png'
-import sideImage3 from './assets/images/sider_2019_02-04-2.png'
->>>>>>> Stashed changes
 
 function App() {
   return (
     <div className={styles.App}>
-<<<<<<< Updated upstream
       <header className={styles['App-header']}>
         <img src={logo} className={styles['App-logo']} alt="logo" />
         <p>
@@ -42,7 +30,7 @@ function App() {
       </div>
       <Footer />
 >>>>>>> Stashed changes
-    </div>
+    </div >
   );
 }
 
