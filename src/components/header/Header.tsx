@@ -1,15 +1,17 @@
-import React from 'react'
-import styles from './Header.module.css'
-import logo from '../../assets/logo.svg';
-import { Button, Dropdown, Input, Menu, Layout, Typography } from 'antd'
-import { GlobalOutlined } from '@ant-design/icons'
+import React from "react";
+import styles from "./Header.module.css";
+import logo from "../../assets/logo.svg";
+import { Button, Dropdown, Input, Menu, Layout, Typography } from "antd";
+import { GlobalOutlined } from "@ant-design/icons";
+import { useHistory } from "react-router-dom";
 
 export const Header: React.FC = () => {
+  const history = useHistory();
   return (
     <React.Fragment>
-      <div className={styles['app-header']}>
+      <div className={styles["app-header"]}>
         {/* top-header */}
-        <div className={styles['top-header']}>
+        <div className={styles["top-header"]}>
           <Typography.Text>Make our trip happier</Typography.Text>
           <Dropdown.Button
             style={{ marginLeft: 15 }}
@@ -23,20 +25,24 @@ export const Header: React.FC = () => {
           >
             Language
           </Dropdown.Button>
-          <Button.Group className={styles['button-group']}>
-            <Button>Sign in</Button>
-            <Button>Login</Button>
+          <Button.Group className={styles["button-group"]}>
+            <Button onClick={() => history.push("register")}>Sign in</Button>
+            <Button onClick={() => history.push("signIn")}>Login</Button>
           </Button.Group>
         </div>
-        <Layout.Header className={styles['main-header']}>
-          <img src={logo} alt="" className={styles['App-logo']} />
-          <Typography.Title level={3} className={styles.title}>React Travel's World</Typography.Title>
+        <Layout.Header className={styles["main-header"]}>
+          <span onClick={() => history.push("/")}>
+            <img src={logo} alt="" className={styles["App-logo"]} />
+            <Typography.Title level={3} className={styles.title}>
+              React Travel's World
+            </Typography.Title>
+          </span>
           <Input.Search
-            placeholder={'Please input your destination or your keyword'}
-            className={styles['search-input']}
+            placeholder={"Please input your destination or your keyword"}
+            className={styles["search-input"]}
           />
         </Layout.Header>
-        <Menu mode={'horizontal'} className={styles['main-menu']}>
+        <Menu mode={"horizontal"} className={styles["main-menu"]}>
           <Menu.Item key={1}>Home</Menu.Item>
           <Menu.Item key={2}>Weekend Trip</Menu.Item>
           <Menu.Item key={3}>Trip with a group</Menu.Item>
@@ -49,10 +55,8 @@ export const Header: React.FC = () => {
           <Menu.Item key={11}>Custom Trip</Menu.Item>
           <Menu.Item key={12}>Study Tour</Menu.Item>
           <Menu.Item key={13}>Visa</Menu.Item>
-
         </Menu>
       </div>
     </React.Fragment>
-  )
-}
-
+  );
+};
