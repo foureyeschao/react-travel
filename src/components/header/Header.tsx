@@ -19,6 +19,7 @@ export const Header: React.FC = () => {
               <Menu>
                 <Menu.Item>English</Menu.Item>
                 <Menu.Item>Français</Menu.Item>
+                <Menu.Item>中文</Menu.Item>
               </Menu>
             }
             icon={<GlobalOutlined />}
