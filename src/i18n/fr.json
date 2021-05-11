@@ -1,0 +1,35 @@
+{
+    "header": {
+        "slogan": "Rendre le voyage plus heureux",
+        "add_new_language": "ajouter une nouvelle langue",
+        "title": "React Voyage",
+        "register": "S'inscrire",
+        "signin": "S'identifier",
+        "home_page": "Accueil",
+        "weekend": "Weekend",
+        "group": "Groupe",
+        "backpack": "Sac à dos",
+        "private": "Privé",
+        "cruise": "Croisière",
+        "hotel": "Hôtel et Attractions",
+        "local": "Local",
+        "theme": "Thème",
+        "custom": "Personnalisé",
+        "study": "Étude",
+        "visa": "Visa",
+        "enterprise": "Enterprise",
+        "high_end": "Haut de gamme",
+        "outdoor": "Extérieur",
+        "insurance": "Assurance"
+    },
+    "footer": {
+        "detail": "Tous droits réservés @ ReactTravel.com"
+    },
+    "home_page": {
+        "hot_recommended": "Recommandé",
+        "new_arrival": "Nouvelle arrivee",
+        "domestic_travel": "Voyage domestique",
+        "joint_venture": "Joint Venture",
+        "start_from": "(À partir de)"
+    }
+}
