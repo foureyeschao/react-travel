@@ -11,11 +11,12 @@ import {
   addLanguageActionCreator,
   changeLanguageActionCreator,
 } from "../../redux/language/languageActions";
+import { $CombinedState } from 'redux';
 
 export const Header: React.FC = () => {
   const history = useHistory();
-  const language = useSelector((state) => state.language);
-  const languageList = useSelector((state) => state.languageList);
+  const language = useSelector((state) => state.language.language);
+  const languageList = useSelector((state) => state.language.languageList);
   const dispatch = useDispatch();
   const { t } = useTranslation()
 
@@ -37,7 +38,7 @@ export const Header: React.FC = () => {
             style={{ marginLeft: 15 }}
             overlay={
               <Menu onClick={menuClickHandler}>
-                {languageList.map((language) => (
+                {languageList.map((language, index) => (
                   <Menu.Item key={language.code}>{language.name}</Menu.Item>
                 ))}
                 <Menu.Item key={"new"}>
@@ -83,10 +84,10 @@ export const Header: React.FC = () => {
           <Menu.Item key={11}>{t("header.custom")}</Menu.Item>
           <Menu.Item key={12}>{t("header.study")}</Menu.Item>
           <Menu.Item key={13}>{t("header.visa")}</Menu.Item>
-          <Menu.Item key={12}>{t("header.enterprise")}</Menu.Item>
-          <Menu.Item key={13}>{t("header.high_end")}</Menu.Item>
-          <Menu.Item key={12}>{t("header.outdoor")}</Menu.Item>
-          <Menu.Item key={13}>{t("header.insurance")}</Menu.Item>
+          <Menu.Item key={14}>{t("header.enterprise")}</Menu.Item>
+          <Menu.Item key={15}>{t("header.high_end")}</Menu.Item>
+          <Menu.Item key={16}>{t("header.outdoor")}</Menu.Item>
+          <Menu.Item key={17}>{t("header.insurance")}</Menu.Item>
         </Menu>
       </div>
     </React.Fragment>

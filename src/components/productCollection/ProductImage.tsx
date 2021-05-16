@@ -25,7 +25,7 @@ const ProductImageComponent: React.FC<IProductImageProps> = (
       <Typography.Text type="secondary">
         {title.slice(0, 25)}
       </Typography.Text>
-      <Typography.Text type="danger" strong>From {price}$</Typography.Text>
+      <Typography.Text type="danger" strong> From {price}$</Typography.Text>
     </div>
   </Link>
 }

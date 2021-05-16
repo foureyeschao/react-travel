@@ -13,6 +13,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.16",
     "antd": "^4.15.3",
+    "axios": "^0.21.1",
     "i18next": "^20.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -29,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server __json_server_mock__/product.json --watch"
+    "json-server": "json-server --watch -c __json_server_mock__/jserver.json __json_server_mock__/db.json"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +52,6 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
-    "json-server": "^0.16.3",
     "typescript-plugin-css-modules": "^3.2.0"
   }
 }
