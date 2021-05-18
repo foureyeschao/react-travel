@@ -15,14 +15,9 @@ import sideImage2 from "../../assets/images/sider_2019_02-04.png";
 import sideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 //import { productList1, productList2, productList3 } from './mockups'
 import { withTranslation, WithTranslation } from "react-i18next";
-import axios from "axios";
 import { connect } from "react-redux";
 import { RootState } from "../../redux/store";
-import {
-  fetchRecommendProductsStartActionCreator,
-  fetchRecommendProductsSuccessActionCreator,
-  fetchRecommendProductsFailActionCreator,
-} from "../../redux/recommendProducts/recommendProductsActions";
+import { giveMeDataActionCreator } from '../../redux/recommendProducts/recommendProductsActions'
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -33,14 +28,8 @@ const mapStateToProps = (state: RootState) => {
 };
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    fetchStart: () => {
-      dispatch(fetchRecommendProductsStartActionCreator())
-    },
-    fetchSuccess: (data: any) => {
-      dispatch(fetchRecommendProductsSuccessActionCreator(data))
-    },
-    fetchFail: (error: any) => {
-      dispatch(fetchRecommendProductsFailActionCreator(error))
+    giveMeData: ()=>{
+      dispatch(giveMeDataActionCreator())
     }
   }
 }
@@ -48,18 +37,8 @@ const mapDispatchToProps = (dispatch: any) => {
 type PropsType = WithTranslation & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 class HomePageComponent extends React.Component<PropsType> {
 
-  async componentDidMount() {
-    this.props.fetchStart()
-    try {
-      const { data } = await axios.get(
-        "http://localhost:9000/api/productCollections"
-      );
-      this.props.fetchSuccess(data)
-
-    } catch (error) {
-
-      this.props.fetchFail(error.message)
-    }
+  componentDidMount() {
+    this.props.giveMeData()
   }
   render() {
 
